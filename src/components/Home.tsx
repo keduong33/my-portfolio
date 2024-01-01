@@ -1,5 +1,5 @@
 const Photo = () => (
-  <div className="mockup-browser border bg-base-300 md:w-[60%] lg:w-[60%] -z-[1]">
+  <div className="mockup-browser border bg-base-300 md:w-[60%] lg:w-[60%] -z-[1] self-center">
     <div className="mockup-browser-toolbar">
       <div className="input">Ke (David)?</div>
     </div>
