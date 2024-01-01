@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <p className="text-red-600">Test</p>
+      <button className="btn btn-primary">Bad</button>
     </>
   );
 }
