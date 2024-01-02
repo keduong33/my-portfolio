@@ -8,10 +8,10 @@ const NavBarOptions = () => (
     <li>
       <a href="#projects">Projects</a>
     </li>
-    <li>
-      <details>
+    <li className="lg:w-[156px]">
+      <details className="">
         <summary>Socials</summary>
-        <ul className="px-2">
+        <ul className="px-2 !mt-0">
           <li>
             <a href="https://www.linkedin.com/in/ke-duong/" target="_blank">
               <LinkedinLogo />
@@ -29,13 +29,15 @@ const NavBarOptions = () => (
     </li>
     <li>
       <details>
-        <summary>Misc</summary>
-        <ul className="px-2">
-          <li>
-            <a href="#readings">Readings</a>
+        <summary>
+          Misc <div className="badge badge-info">Coming soon</div>
+        </summary>
+        <ul className="px-2 !mt-0">
+          <li className="disabled pointer-events-none">
+            <a href="#readings">Reading List</a>
           </li>
-          <li>
-            <a href="#quotes"> Quotes</a>
+          <li className="disabled pointer-events-none">
+            <a href="#quotes">Favorite Quotes</a>
           </li>
         </ul>
       </details>
@@ -80,7 +82,7 @@ function NavBar() {
         </div>
       </div>
       <div className="justify-end hidden md:block lg:pr-4 pr-2">
-        <ul className="menu menu-horizontal lg:menu-lg gap-10">
+        <ul className="menu menu-horizontal lg:menu-lg gap-5">
           <NavBarOptions />
         </ul>
       </div>
