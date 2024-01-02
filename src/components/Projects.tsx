@@ -1,3 +1,5 @@
+import chatbot from "../assets/chatbot.png";
+
 function Projects() {
   return (
     <div id="projects">
@@ -7,11 +9,7 @@ function Projects() {
       <div className="w-full flex lg:flex-row flex-col items-center">
         <div className="card card-compact max-w-[300px] bg-neutral shadow-xl">
           <figure className="mb-0 px-4">
-            <img
-              src="src/assets/chatbot.png"
-              alt="chatbot"
-              className="max-w-[150px]"
-            />
+            <img src={chatbot} alt="chatbot" className="max-w-[150px]" />
           </figure>
           <div className="card-body">
             <h2 className="card-title mt-0">Language Partner Chatbot</h2>
