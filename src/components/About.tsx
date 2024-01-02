@@ -20,10 +20,22 @@ function About() {
           </p>
           <p>
             It is fun turning different ideas to life with my mates as I can
-            learn new things and satisfy my curiosity.{" "}
+            learn new things and satisfy my curiosity -{" "}
             <a className="link" href="#projects">
-              Check out my projects
+              check out my projects
             </a>
+            .
+          </p>
+          <p>
+            Shoot me a message on{" "}
+            <a
+              className="link"
+              href="https://www.linkedin.com/in/ke-duong/"
+              target="_blank"
+            >
+              Linkedin
+            </a>{" "}
+            ;)
           </p>
         </div>
         <Experiences />
