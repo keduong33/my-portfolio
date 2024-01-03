@@ -1,12 +1,15 @@
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { Link } from "react-scroll";
 
 const NavBarOptions = () => (
   <>
     <li>
-      <a href="#experiences">Experiences</a>
+      <Link to="experiences" offset={-80}>
+        Experiences
+      </Link>
     </li>
     <li>
-      <a href="#projects">Projects</a>
+      <Link to="projects">Projects</Link>
     </li>
     <li className="lg:w-[156px]">
       <details className="">
