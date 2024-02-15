@@ -3,19 +3,21 @@ import chatbot from "../assets/chatbot.png";
 function Projects() {
   return (
     <div id="projects">
-      <div className="prose pb-2">
+      <div className="pb-2 prose">
         <h2>Projects</h2>
       </div>
-      <div className="w-full flex lg:flex-row flex-col items-center">
+      <div className="flex flex-col items-center w-full lg:flex-row">
         <div className="card card-compact max-w-[300px] bg-neutral shadow-xl">
-          <figure className="mb-0 px-4">
+          <figure className="px-4 mb-0">
             <img src={chatbot} alt="chatbot" className="max-w-[150px]" />
           </figure>
           <div className="card-body">
-            <h2 className="card-title mt-0">Language Partner Chatbot</h2>
+            <h2 className="justify-center w-full mt-0 card-title">
+              Language Partner Chatbot
+            </h2>
             <p className="text-justify">
-              A friendly LLM bot that user can converse via text/speech to learn
-              English. Txhis partner will fix the user's grammars upon request.
+              A friendly LLM bot that user can converse via text and/or speech
+              to learn different languages.
             </p>
             <div className="card-actions ">
               <a
@@ -27,7 +29,7 @@ function Projects() {
               </a>
               <a
                 className="link link-secondary"
-                href="https://github.com/keduong33/ChattyChatty"
+                href="https://github.com/keduong33/chatty-chatty"
                 target="_blank"
               >
                 GitHub
