@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/*"
+to = "https://ke-duong.com"
+status = 301
+force = true
