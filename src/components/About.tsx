@@ -11,22 +11,18 @@ function About() {
       <div className="max-w-[1000px]">
         <div>
           <p>
-            I build things at{" "}
+            Hi, my name is Ke (David)! <br />I build things at{" "}
             <a className="link" href="https://www.hungryhungry.com/who">
               HungryHungry
             </a>
             . In my free time, I play soccer, read books and build and/or break
-            things over and over again.
-          </p>
-          <p>
-            It is fun turning different ideas to life with my mates as I can
-            learn new things and satisfy my curiosity -{" "}
+            things over and over again. <br /> It is fun turning different ideas
+            to life with my mates as I can learn new things and satisfy my
+            curiosity -{" "}
             <a className="link" href="#projects">
               check out my projects
             </a>
-            .
-          </p>
-          <p>
+            .<br />
             Shoot me a message on{" "}
             <a
               className="link"

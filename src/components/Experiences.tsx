@@ -6,12 +6,13 @@ function Experiences() {
       </div>
       <ul className="timeline timeline-snap-icon timeline-vertical max-md:timeline-compact">
         <li>
-          <div className="timeline-start md:text-end pb-10">
+          <div className="pb-10 timeline-start md:text-end">
             <time className="font-mono italic">May 2023 - current</time>
             <div>
               Software Developer at{" "}
               <a className="text-lg font-black link link-hover">HungryHungry</a>
-              <br />I contributed to developing the UI of{" "}
+              <br />
+              <b>Highlight</b>: Developed the UI of{" "}
               <a
                 className="link"
                 href="https://www.hungryhungry.com/hungrypay"
