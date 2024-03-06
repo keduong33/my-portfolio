@@ -22,7 +22,7 @@ function Projects() {
             <div className="card-actions ">
               <a
                 className="link link-primary"
-                href="https://chattychatty.netlify.app/"
+                href="https://youtu.be/aVbRqxHJIhU"
                 target="_blank"
               >
                 Demo
