@@ -1,4 +1,5 @@
 import chatbot from "../../assets/chatbot.png";
+import favicon from "/favicon.png";
 
 export type Project = {
   title: string;
@@ -17,4 +18,12 @@ const chattychatty: Project = {
   imageLink: chatbot,
 };
 
-export const projects: Project[] = [chattychatty];
+const portfolio: Project = {
+  title: "My Portfolio",
+  description: "A showcase website of my tinkerings",
+  demoLink: "https://ke-duong.com",
+  githubLink: "https://github.com/keduong33/my-portfolio",
+  imageLink: favicon,
+};
+
+export const projects: Project[] = [portfolio, chattychatty];
