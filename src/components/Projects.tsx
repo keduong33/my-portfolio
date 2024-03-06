@@ -1,4 +1,4 @@
-import chatbot from "../assets/chatbot.png";
+import { projects } from "./utils/projects";
 
 function Projects() {
   return (
@@ -7,36 +7,47 @@ function Projects() {
         <h2>Projects</h2>
       </div>
       <div className="flex flex-col items-center w-full lg:flex-row">
-        <div className="card card-compact max-w-[300px] bg-neutral shadow-xl">
-          <figure className="px-4 mb-0">
-            <img src={chatbot} alt="chatbot" className="max-w-[150px]" />
-          </figure>
-          <div className="card-body">
-            <h2 className="justify-center w-full mt-0 card-title">
-              Language Partner Chatbot
-            </h2>
-            <p className="text-justify">
-              A friendly LLM bot that user can converse via text and/or speech
-              to learn different languages.
-            </p>
-            <div className="card-actions ">
-              <a
-                className="link link-primary"
-                href="https://youtu.be/aVbRqxHJIhU"
-                target="_blank"
-              >
-                Demo
-              </a>
-              <a
-                className="link link-secondary"
-                href="https://github.com/keduong33/chatty-chatty"
-                target="_blank"
-              >
-                GitHub
-              </a>
+        {projects.map((project, index) => (
+          <div
+            className="card card-compact max-w-[300px] bg-neutral shadow-xl"
+            key={`Project #${index + 1}`}
+          >
+            <figure className="px-4 mb-0">
+              <img
+                src={project.imageLink}
+                alt={project.title}
+                className="max-w-[150px]"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="justify-center w-full mt-0 card-title">
+                {project.title}
+              </h2>
+              <p className="text-justify">{project.description}</p>
+
+              <div className="card-actions">
+                {project.demoLink && (
+                  <a
+                    className="link link-primary"
+                    href={project.demoLink}
+                    target="_blank"
+                  >
+                    Demo
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a
+                    className="link link-secondary"
+                    href={project.githubLink}
+                    target="_blank"
+                  >
+                    GitHub
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
