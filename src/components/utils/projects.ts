@@ -20,7 +20,8 @@ const chattychatty: Project = {
 
 const portfolio: Project = {
   title: "My Portfolio",
-  description: "A showcase website of my tinkerings",
+  description:
+    "A showcase website of my tinkerings. The website you are on right now ;)",
   demoLink: "https://ke-duong.com",
   githubLink: "https://github.com/keduong33/my-portfolio",
   imageLink: favicon,

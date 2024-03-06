@@ -6,17 +6,17 @@ function Projects() {
       <div className="pb-2 prose">
         <h2>Projects</h2>
       </div>
-      <div className="flex flex-col items-center w-full lg:flex-row">
+      <div className="flex flex-col items-center w-full gap-5 lg:flex-row">
         {projects.map((project, index) => (
           <div
-            className="card card-compact max-w-[300px] bg-neutral shadow-xl"
+            className="card card-compact w-[300px] h-[360px] bg-neutral shadow-xl"
             key={`Project #${index + 1}`}
           >
             <figure className="px-4 mb-0">
               <img
                 src={project.imageLink}
                 alt={project.title}
-                className="max-w-[150px]"
+                className="max-w-[150px] max-h-[150px]"
               />
             </figure>
             <div className="card-body">
