@@ -2,6 +2,7 @@ import chatbot from "../../assets/chatbot.png";
 import favicon from "/favicon.png";
 
 export type Project = {
+  id: string;
   title: string;
   description?: string;
   demoLink?: string;
@@ -10,6 +11,7 @@ export type Project = {
 };
 
 const chattychatty: Project = {
+  id: "chatty-chatty",
   title: "Language Partner Chatbot",
   description:
     " A friendly LLM bot that user can converse via text and/or speech to learn different languages.",
@@ -19,6 +21,7 @@ const chattychatty: Project = {
 };
 
 const portfolio: Project = {
+  id: "my-portfolio",
   title: "My Portfolio",
   description:
     "A website showcasing my tinkerings. The website you are on right now ;)",
@@ -27,4 +30,12 @@ const portfolio: Project = {
   imageLink: favicon,
 };
 
-export const projects: Project[] = [portfolio, chattychatty];
+const pokeguideCli: Project = {
+  id: "pokeguide-gli",
+  title: "Pokeguide CLI",
+  description:
+    "A REPL program that helps users play Pokemon Showdown more effective",
+  githubLink: " https://github.com/keduong33/poke-guide-cli",
+};
+
+export const projects: Project[] = [portfolio, chattychatty, pokeguideCli];

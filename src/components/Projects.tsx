@@ -1,5 +1,6 @@
 import posthog from "posthog-js";
 import { projects } from "./utils/projects";
+const placeholder = "/thinking-face.svg";
 
 function Projects() {
   return (
@@ -15,7 +16,7 @@ function Projects() {
           >
             <figure className="px-4 mb-0">
               <img
-                src={project.imageLink}
+                src={project.imageLink ?? placeholder}
                 alt={project.title}
                 className="max-w-[150px] max-h-[150px]"
               />
