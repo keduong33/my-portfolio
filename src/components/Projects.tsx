@@ -1,3 +1,4 @@
+import posthog from "posthog-js";
 import { projects } from "./utils/projects";
 
 function Projects() {
@@ -31,6 +32,11 @@ function Projects() {
                     className="link link-primary"
                     href={project.demoLink}
                     target="_blank"
+                    onClick={() => {
+                      posthog.capture("clicked demo", {
+                        project_id: project.id,
+                      });
+                    }}
                   >
                     Demo
                   </a>
@@ -40,6 +46,11 @@ function Projects() {
                     className="link link-secondary"
                     href={project.githubLink}
                     target="_blank"
+                    onClick={() => {
+                      posthog.capture("clicked github", {
+                        project_id: project.id,
+                      });
+                    }}
                   >
                     GitHub
                   </a>
