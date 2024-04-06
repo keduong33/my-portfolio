@@ -8,12 +8,17 @@ function About() {
       <img
         src="/profile.jpg"
         className="w-full max-w-[400px] m-auto border rounded-2xl border-transparent lg:hidden block"
+        alt="Profile picture"
       />
       <div className="max-w-[1000px]">
         <div>
           <p>
             Hi, my name is Ke (David)! <br />I build things at{" "}
-            <a className="link" href="https://www.hungryhungry.com/who">
+            <a
+              href="https://www.hungryhungry.com/who"
+              className="link"
+              title="Company"
+            >
               HungryHungry
             </a>
             . In my free time, I play soccer, read books and build and/or break

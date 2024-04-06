@@ -10,7 +10,12 @@ function Experiences() {
             <time className="font-mono italic">May 2023 - current</time>
             <div>
               Software Developer at{" "}
-              <a className="text-lg font-black link link-hover">HungryHungry</a>
+              <a
+                className="text-lg font-black link link-hover"
+                href="https://www.hungryhungry.com/who"
+              >
+                HungryHungry
+              </a>
               <br />
               <b>Highlight</b>: Developed the UI of{" "}
               <a
