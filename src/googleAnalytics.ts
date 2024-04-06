@@ -1,9 +1,9 @@
 export enum GaEventCategory {
-  Interest = "Interest",
-  ProjectInterest = "Project Interest",
-  SocialInterest = "Social Interest",
+  Interest = "interest",
+  ProjectInterest = "project_interest",
+  SocialInterest = "social_interest",
 }
 
 export enum GaEventAction {
-  InterestClick = "Interest Click",
+  InterestClick = "interest_click",
 }
