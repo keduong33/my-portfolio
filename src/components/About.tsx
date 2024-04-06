@@ -1,3 +1,4 @@
+import { GaEventAction, GaEventCategory } from "../googleAnalytics";
 import Experiences from "./Experiences";
 import Projects from "./Projects";
 
@@ -19,7 +20,16 @@ function About() {
             things over and over again. <br /> It is fun turning different ideas
             to life with my mates as I can learn new things and satisfy my
             curiosity -{" "}
-            <a className="link" href="#projects">
+            <a
+              className="link"
+              href="#projects"
+              onClick={() =>
+                gtag("event", GaEventAction.InterestClick, {
+                  event_category: GaEventCategory.Interest,
+                  event_label: "Projects",
+                })
+              }
+            >
               check out my projects
             </a>
             .<br />
@@ -28,6 +38,12 @@ function About() {
               className="link"
               href="https://www.linkedin.com/in/ke-duong/"
               target="_blank"
+              onClick={() =>
+                gtag("event", GaEventAction.InterestClick, {
+                  event_category: GaEventCategory.SocialInterest,
+                  event_label: "LinkedIn",
+                })
+              }
             >
               Linkedin
             </a>{" "}
