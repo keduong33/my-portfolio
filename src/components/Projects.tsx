@@ -1,4 +1,4 @@
-import posthog from "posthog-js";
+import { GaEventAction, GaEventCategory } from "../googleAnalytics";
 import { projects } from "./utils/projects";
 const placeholder = "/thinking-face.svg";
 
@@ -33,11 +33,12 @@ function Projects() {
                     className="link link-primary"
                     href={project.demoLink}
                     target="_blank"
-                    onClick={() => {
-                      posthog.capture("clicked demo", {
-                        project_id: project.id,
-                      });
-                    }}
+                    onClick={() =>
+                      gtag("event", GaEventAction.InterestClick, {
+                        event_category: GaEventCategory.ProjectInterest,
+                        event_label: `${project.title}-Demo`,
+                      })
+                    }
                   >
                     Demo
                   </a>
@@ -47,11 +48,12 @@ function Projects() {
                     className="link link-secondary"
                     href={project.githubLink}
                     target="_blank"
-                    onClick={() => {
-                      posthog.capture("clicked github", {
-                        project_id: project.id,
-                      });
-                    }}
+                    onClick={() =>
+                      gtag("event", GaEventAction.InterestClick, {
+                        event_category: GaEventCategory.ProjectInterest,
+                        event_label: `${project.title}-Github`,
+                      })
+                    }
                   >
                     GitHub
                   </a>
