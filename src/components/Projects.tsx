@@ -37,6 +37,7 @@ function Projects() {
                       gtag("event", GaEventAction.InterestClick, {
                         event_category: GaEventCategory.ProjectInterest,
                         event_label: `${project.title}-Demo`,
+                        project: project.id,
                       })
                     }
                   >
@@ -52,6 +53,7 @@ function Projects() {
                       gtag("event", GaEventAction.InterestClick, {
                         event_category: GaEventCategory.ProjectInterest,
                         event_label: `${project.title}-Github`,
+                        project: project.id,
                       })
                     }
                   >
