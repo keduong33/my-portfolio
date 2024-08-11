@@ -52,6 +52,9 @@
     @apply border-border font-mono;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground pt-24;
+  }
+  a {
+    @apply underline text-muted-foreground hover:text-foreground;
   }
 }
