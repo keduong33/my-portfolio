@@ -57,4 +57,9 @@
   a {
     @apply underline text-muted-foreground hover:text-foreground;
   }
+  @media (min-width: 1400px) {
+    .container {
+      @apply !max-w-screen-sm;
+    }
+  }
 }
