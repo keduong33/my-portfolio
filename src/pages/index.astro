@@ -1,52 +1,42 @@
 ---
-import "@/styles/globals.css";
+import { HOME } from "../consts";
+import Page from "../layouts/Page.astro";
 ---
 
-<html lang="en" class="dark">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <main class="container space-y-16">
-      <section>
-        <h4>Hi, my name is Ke (David)!</h4>
-        <br />
-        <p>
-          I build things at Canva. In my free time, I play soccer, read books
-          and build and/or break things over and over again.
-        </p>
-        <br />
-        <p>
-          It's fun turning different ideas to life with my mates as I can learn
-          new things and satisfy my curiosity - check out my projects. Shoot me
-          a message on Linkedin ;)
-        </p>
-      </section>
+<Page page={HOME}>
+  <section>
+    <h4>Hi, my name is Ke (David)!</h4>
+    <br />
+    <p>
+      I build things at Canva. In my free time, I play soccer, read books and
+      build and/or break things over and over again.
+    </p>
+    <br />
+    <p>
+      It's fun turning different ideas to life with my mates as I can learn new
+      things and satisfy my curiosity - check out my projects. Shoot me a
+      message on Linkedin ;)
+    </p>
+  </section>
 
-      <section>
-        <div class="flex-wrap flex items-center justify-between">
-          <h5>Recent posts</h5>
-          <a href="/blogs">See all</a>
-        </div>
-      </section>
+  <section>
+    <div class="flex flex-wrap items-center justify-between">
+      <h5>Recent posts</h5>
+      <a href="/blogs">See all</a>
+    </div>
+  </section>
 
-      <section>
-        <div class="flex-wrap flex items-center justify-between">
-          <h5>Work experiences</h5>
-          <a href="/work-experiences">See all</a>
-        </div>
-      </section>
+  <section>
+    <div class="flex flex-wrap items-center justify-between">
+      <h5>Work experiences</h5>
+      <a href="/work-experiences">See all</a>
+    </div>
+  </section>
 
-      <section>
-        <div class="flex-wrap flex items-center justify-between">
-          <h5>Side Projects</h5>
-          <a href="/work-experiences" class="hover:text-fore">See all</a>
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
+  <section>
+    <div class="flex flex-wrap items-center justify-between">
+      <h5>Side Projects</h5>
+      <a href="/work-experiences" class="hover:text-fore">See all</a>
+    </div>
+  </section>
+</Page>

@@ -1,0 +1,29 @@
+---
+import "@/styles/globals.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import type { PageInfo } from "../consts";
+
+interface Props {
+  page: PageInfo;
+}
+
+const { page } = Astro.props;
+---
+
+<html lang="en" class="dark" {...page}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{page.title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="container space-y-16 pb-9">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
