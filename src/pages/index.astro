@@ -1,6 +1,19 @@
 ---
-import { HOME } from "../consts";
+import { getCollection } from "astro:content";
+import { BLOGS, HOME, WORK_EXPERIENCES } from "../consts";
 import Page from "../layouts/Page.astro";
+import { dateRange } from "../lib/utils";
+
+const workExperiencesCollection = await getCollection("work-experiences");
+const workExperiences = await Promise.all(
+  workExperiencesCollection.map(async (experience) => {
+    const { Content } = await experience.render();
+    return {
+      ...experience.data,
+      Content,
+    };
+  })
+);
 ---
 
 <Page page={HOME}>
@@ -22,21 +35,39 @@ import Page from "../layouts/Page.astro";
   <section>
     <div class="flex flex-wrap items-center justify-between">
       <h5>Recent posts</h5>
-      <a href="/blogs">See all</a>
+      <a href={BLOGS.url} class="hover:animate-bounce">See all</a>
     </div>
   </section>
 
-  <section>
+  <section class="space-y-6">
     <div class="flex flex-wrap items-center justify-between">
       <h5>Work experiences</h5>
-      <a href="/work-experiences">See all</a>
+      <a href={WORK_EXPERIENCES.url} class="hover:animate-bounce">See all</a>
     </div>
+    <ul class="flex flex-col space-y-4">
+      {
+        workExperiences.map((workExperience) => (
+          <li>
+            <div class="text-sm opacity-75">
+              {dateRange(workExperience.dateStart, workExperience.dateEnd)}
+            </div>
+            <div class="font-semibold text-black dark:text-white">
+              {workExperience.company}
+            </div>
+            <div class="text-sm opacity-75">{workExperience.role}</div>
+            <blockquote class="pl-2 italic border-gray-600 border-l-4">
+              {workExperience.summary}
+            </blockquote>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 
   <section>
     <div class="flex flex-wrap items-center justify-between">
       <h5>Side Projects</h5>
-      <a href="/work-experiences" class="hover:text-fore">See all</a>
+      <a href="/side-projects" class="hover:text-fore">See all</a>
     </div>
   </section>
 </Page>

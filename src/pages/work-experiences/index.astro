@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import { WORK_EXPERIENCES } from "../../consts";
+import Page from "../../layouts/Page.astro";
+
+const collection = (await getCollection("work-experiences")).sort(
+  (a, b) =>
+    new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf()
+);
+const workExperiences = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item.data, Content };
+  })
+);
+---
+
+<Page page={WORK_EXPERIENCES}>
+  <ul>
+    {
+      workExperiences.map((work) => (
+        <li>
+          <article>
+            <h2>{work.company}</h2>
+            <work.Content />
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</Page>
