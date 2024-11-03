@@ -1,5 +1,5 @@
 ---
-
+import { BLOGS, SIDE_PROJECTS, WORK_EXPERIENCES } from "../consts";
 ---
 
 <header
@@ -10,9 +10,9 @@
       <h3>Ke Duong</h3>
     </a>
     <span>
-      <a href="/blogs" class="text-secondary-foreground">blogs</a>
-      <a href="/work" class="text-secondary-foreground">work</a>
-      <a href="/projects" class="text-secondary-foreground">projects</a>
+      <a href={BLOGS.url} class="text-secondary-foreground">blogs</a>
+      <a href={WORK_EXPERIENCES.url} class="text-secondary-foreground">work</a>
+      <a href={SIDE_PROJECTS.url} class="text-secondary-foreground">projects</a>
     </span>
   </nav>
 </header>

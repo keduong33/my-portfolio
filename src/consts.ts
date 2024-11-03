@@ -25,3 +25,9 @@ export const WORK_EXPERIENCES: PageInfo = {
   description: "Ke's Work experiences",
   url: "/work-experiences",
 };
+
+export const SIDE_PROJECTS: PageInfo = {
+  title: "Side Projects",
+  description: "Ke's fun side projects",
+  url: "/side-projects",
+};
