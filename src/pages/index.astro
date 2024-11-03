@@ -18,33 +18,39 @@ const workExperiences = await Promise.all(
 
 <Page page={HOME}>
   <section>
-    <h4>Hi, my name is Ke (David)!</h4>
-    <br />
+    <h3>
+      Hi adventurers! <img
+        class="w- h-8 inline-block align-sub"
+        alt="a green frog with big eyes and a smile"
+        title="yay frog random"
+        loading="lazy"
+        src="yay-frog.gif"
+      />
+    </h3>
     <p>
-      I build things at Canva. In my free time, I play soccer, read books and
-      build and/or break things over and over again.
+      I'm <em class="large">Ke</em>, <em class="large">David</em>. I build
+      things at Canva. Outside of work, I like learning new things and doing
+      random projects too since it's just fun fun.
     </p>
-    <br />
     <p>
-      It's fun turning different ideas to life with my mates as I can learn new
-      things and satisfy my curiosity - check out my projects. Shoot me a
-      message on Linkedin ;)
+      I also enjoy a few hobbies, like playing futsal, reading, photography,
+      skating, and more.
     </p>
   </section>
 
   <section>
     <div class="flex flex-wrap items-center justify-between">
-      <h5>Recent posts</h5>
+      <h4>Recent posts</h4>
       <a href={BLOGS.url} class="hover:animate-bounce">See all</a>
     </div>
   </section>
 
-  <section class="space-y-6">
+  <section class="space-y-4">
     <div class="flex flex-wrap items-center justify-between">
-      <h5>Work experiences</h5>
+      <h4>Work experiences</h4>
       <a href={WORK_EXPERIENCES.url} class="hover:animate-bounce">See all</a>
     </div>
-    <ul class="flex flex-col space-y-4">
+    <ul class="flex flex-col space-y-8 list-none ml-0">
       {
         workExperiences.map((workExperience) => (
           <li>
@@ -55,9 +61,7 @@ const workExperiences = await Promise.all(
               {workExperience.company}
             </div>
             <div class="text-sm opacity-75">{workExperience.role}</div>
-            <blockquote class="pl-2 italic border-gray-600 border-l-4">
-              {workExperience.summary}
-            </blockquote>
+            <blockquote class="mt-2">{workExperience.summary}</blockquote>
           </li>
         ))
       }
@@ -66,7 +70,7 @@ const workExperiences = await Promise.all(
 
   <section>
     <div class="flex flex-wrap items-center justify-between">
-      <h5>Side Projects</h5>
+      <h4>Side Projects</h4>
       <a href="/side-projects" class="hover:text-fore">See all</a>
     </div>
   </section>

@@ -51,15 +51,59 @@
   * {
     @apply border-border font-mono;
   }
+
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+
+  ul,
+  ol {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  .muted {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .large {
+    @apply text-lg font-semibold;
+  }
+
+  .lead {
+    @apply text-xl text-muted-foreground;
+  }
+
   body {
     @apply bg-background text-foreground pt-24;
   }
   a {
     @apply underline text-muted-foreground hover:text-foreground;
   }
-  @media (min-width: 1400px) {
-    .container {
-      @apply !max-w-screen-sm;
-    }
+  .container {
+    @apply !max-w-screen-sm;
   }
 }
