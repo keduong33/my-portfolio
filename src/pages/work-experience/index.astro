@@ -2,8 +2,9 @@
 import { getCollection } from "astro:content";
 import { WORK_EXPERIENCE } from "../../consts";
 import Page from "../../layouts/Page.astro";
+import { dateRange, shortenUrl } from "../../lib/utils";
 
-const collection = (await getCollection("work-experiences")).sort(
+const collection = (await getCollection("work-experience")).sort(
   (a, b) =>
     new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf()
 );
@@ -16,17 +17,31 @@ const workExperiences = await Promise.all(
 ---
 
 <Page page={WORK_EXPERIENCE}>
-  <h2>{WORK_EXPERIENCE.title}</h2>
-  <ul class="flex flex-col space-y-8 list-none ml-0">
-    {
-      workExperiences.map((work) => (
-        <li>
-          <article>
-            <h2>{work.company}</h2>
-            <work.Content />
-          </article>
-        </li>
-      ))
-    }
-  </ul>
+  <section>
+    <h2>{WORK_EXPERIENCE.title}</h2>
+    <ul class="flex flex-col space-y-8 list-none ml-0">
+      {
+        workExperiences.map((workExperience) => (
+          <li>
+            <article>
+              <div class="text-sm opacity-75">
+                {dateRange(workExperience.dateStart, workExperience.dateEnd)}
+              </div>
+              <div class="flex items-center justify-between">
+                <h4>{workExperience.company}</h4>
+                {workExperience.url && (
+                  <a href={workExperience.url}>
+                    {shortenUrl(workExperience.url)}
+                  </a>
+                )}
+              </div>
+              <div class="text-sm opacity-75">{workExperience.role}</div>
+              <blockquote class="mt-2">{workExperience.summary}</blockquote>
+              <workExperience.Content />
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Page>
