@@ -10,7 +10,7 @@ const blogs = defineCollection({
   }),
 });
 
-const workExperiences = defineCollection({
+const workExperience = defineCollection({
   type: "content",
   schema: z.object({
     company: z.string(),
@@ -36,6 +36,6 @@ const projects = defineCollection({
 
 export const collections = {
   blogs,
-  "work-experiences": workExperiences,
+  "work-experience": workExperience,
   projects,
 };

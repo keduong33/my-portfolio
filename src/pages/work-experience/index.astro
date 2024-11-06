@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { WORK_EXPERIENCES } from "../../consts";
+import { WORK_EXPERIENCE } from "../../consts";
 import Page from "../../layouts/Page.astro";
 
 const collection = (await getCollection("work-experiences")).sort(
@@ -15,8 +15,9 @@ const workExperiences = await Promise.all(
 );
 ---
 
-<Page page={WORK_EXPERIENCES}>
-  <ul>
+<Page page={WORK_EXPERIENCE}>
+  <h2>{WORK_EXPERIENCE.title}</h2>
+  <ul class="flex flex-col space-y-8 list-none ml-0">
     {
       workExperiences.map((work) => (
         <li>

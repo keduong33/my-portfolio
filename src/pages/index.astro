@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import { BLOGS, HOME, SIDE_PROJECTS, WORK_EXPERIENCES } from "../consts";
+import { BLOGS, HOME, SIDE_PROJECTS, WORK_EXPERIENCE } from "../consts";
 import Page from "../layouts/Page.astro";
 import { dateRange } from "../lib/utils";
 
-const workExperiencesCollection = await getCollection("work-experiences");
+const workExperiencesCollection = await getCollection("work-experience");
 const workExperiences = await Promise.all(
   workExperiencesCollection.map(async (experience) => {
     const { Content } = await experience.render();
@@ -48,7 +48,7 @@ const workExperiences = await Promise.all(
   <section class="space-y-4">
     <div class="flex flex-wrap items-center justify-between">
       <h4>Work experiences</h4>
-      <a href={WORK_EXPERIENCES.url} class="hover:animate-bounce">See all</a>
+      <a href={WORK_EXPERIENCE.url} class="hover:animate-bounce">See all</a>
     </div>
     <ul class="flex flex-col space-y-8 list-none ml-0">
       {
@@ -57,7 +57,7 @@ const workExperiences = await Promise.all(
             <div class="text-sm opacity-75">
               {dateRange(workExperience.dateStart, workExperience.dateEnd)}
             </div>
-            <div class="font-semibold text-black dark:text-white">
+            <div class="font-semibold text-foreground">
               {workExperience.company}
             </div>
             <div class="text-sm opacity-75">{workExperience.role}</div>

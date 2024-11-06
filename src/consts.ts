@@ -20,10 +20,10 @@ export const BLOGS: PageInfo = {
   url: "/blogs",
 };
 
-export const WORK_EXPERIENCES: PageInfo = {
+export const WORK_EXPERIENCE: PageInfo = {
   title: "Work Experience",
-  description: "Ke's Work experiences",
-  url: "/work-experiences",
+  description: "Ke's Work experience",
+  url: "/work-experience",
 };
 
 export const SIDE_PROJECTS: PageInfo = {
