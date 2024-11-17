@@ -1,8 +1,10 @@
 ---
+import Image from "astro/components/Image.astro";
 import { getCollection } from "astro:content";
 import SimpleCard from "../components/SimpleCard.astro";
 import ProjectSocialLinks from "../components/SocialLink/ProjectSocialLinks.astro";
 import { BLOGS, HOME, SIDE_PROJECTS, WORK_EXPERIENCE } from "../consts";
+import yayFrogImage from "../images/yayFrog.gif";
 import Page from "../layouts/Page.astro";
 import { dateRange } from "../lib/utils";
 
@@ -33,12 +35,12 @@ const projects = projectsCollection
 <Page page={HOME}>
   <section>
     <h3>
-      Hi wanderers! <img
-        class="w- h-8 inline-block align-sub"
+      Hi wanderers! <Image
+        loading="eager"
+        class="w-8 h-8 inline-block align-sub"
         alt="a green frog with big eyes and a smile"
         title="yay frog random"
-        loading="lazy"
-        src="yay-frog.gif"
+        src={yayFrogImage}
       />
     </h3>
     <p>

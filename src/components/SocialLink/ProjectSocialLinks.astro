@@ -1,4 +1,7 @@
 ---
+import Image from "astro/components/Image.astro";
+import demoImage from "../../images/demo.svg";
+import githubImage from "../../images/github.svg";
 import SocialLink from "./SocialLink.astro";
 
 interface Props {
@@ -15,9 +18,8 @@ const { demoUrl, repoUrl, blogUrl, title } = Astro.props;
   {
     demoUrl && (
       <SocialLink title="Demo" url={demoUrl}>
-        <img
-          loading="lazy"
-          src={"demo.svg"}
+        <Image
+          src={demoImage}
           slot="icon"
           class="w-8"
           alt={`Demo link for project ${title}`}
@@ -28,9 +30,8 @@ const { demoUrl, repoUrl, blogUrl, title } = Astro.props;
   {
     repoUrl && (
       <SocialLink title="Github" url={repoUrl}>
-        <img
-          loading="lazy"
-          src={"github.svg"}
+        <Image
+          src={githubImage}
           slot="icon"
           class="w-8"
           alt={`Repo link for project ${title}`}
@@ -41,9 +42,8 @@ const { demoUrl, repoUrl, blogUrl, title } = Astro.props;
   {
     blogUrl && (
       <SocialLink title="Blog" url={blogUrl}>
-        <img
-          loading="lazy"
-          src={"blog.svg"}
+        <Image
+          src={demoImage}
           slot="icon"
           class="w-8"
           alt={`Blog link for project ${title}`}
