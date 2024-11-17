@@ -69,7 +69,7 @@
   }
 
   p {
-    @apply leading-7 [&:not(:first-child)]:mt-6;
+    @apply leading-7 text-foreground;
   }
 
   blockquote {

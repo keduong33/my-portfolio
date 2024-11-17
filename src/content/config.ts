@@ -27,10 +27,10 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.coerce.date(),
-    draft: z.boolean().optional(),
-    demoURL: z.string().optional(),
-    repoURL: z.string().optional(),
+    lastUpdated: z.coerce.date(),
+    demoUrl: z.string().optional(),
+    repoUrl: z.string().optional(),
+    imageUrl: z.string().optional(),
   }),
 });
 

@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { url, title } = Astro.props;
+---
+
+<a
+  href={url}
+  class="flex flex-row items-center gap-x-2 border rounded p-2 text-sm bg-secondary w-[105px] justify-center h-[50px]"
+>
+  <slot name="icon" />
+  {title}
+</a>

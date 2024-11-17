@@ -1,19 +1,33 @@
 ---
 import { getCollection } from "astro:content";
+import SimpleCard from "../components/SimpleCard.astro";
+import ProjectSocialLinks from "../components/SocialLink/ProjectSocialLinks.astro";
 import { BLOGS, HOME, SIDE_PROJECTS, WORK_EXPERIENCE } from "../consts";
 import Page from "../layouts/Page.astro";
 import { dateRange } from "../lib/utils";
 
+const numberOfStuffShown = 3;
+
 const workExperiencesCollection = await getCollection("work-experience");
 const workExperiences = await Promise.all(
-  workExperiencesCollection.map(async (experience) => {
-    const { Content } = await experience.render();
-    return {
-      ...experience.data,
-      Content,
-    };
-  })
+  workExperiencesCollection
+    .map(async (experience) => {
+      const { Content } = await experience.render();
+      return {
+        ...experience.data,
+        Content,
+      };
+    })
+    .slice(0, numberOfStuffShown)
 );
+
+const projectsCollection = await getCollection("projects");
+const projects = projectsCollection
+  .map((project) => project.data)
+  .sort((a, b) => {
+    return b.lastUpdated.valueOf() - a.lastUpdated.valueOf();
+  })
+  .slice(0, numberOfStuffShown);
 ---
 
 <Page page={HOME}>
@@ -50,17 +64,17 @@ const workExperiences = await Promise.all(
       <h4>Work experiences</h4>
       <a href={WORK_EXPERIENCE.url} class="hover:animate-bounce">See all</a>
     </div>
-    <ul class="flex flex-col space-y-8 list-none ml-0">
+    <ul class="noDiscList">
       {
         workExperiences.map((workExperience) => (
           <li>
-            <div class="text-sm opacity-75">
+            <p class="text-sm opacity-75">
               {dateRange(workExperience.dateStart, workExperience.dateEnd)}
-            </div>
-            <div class="font-semibold text-foreground">
+            </p>
+            <p class="font-semibold text-foreground">
               {workExperience.company}
-            </div>
-            <div class="text-sm opacity-75">{workExperience.role}</div>
+            </p>
+            <p class="text-sm opacity-75">{workExperience.role}</p>
             <blockquote class="mt-2">{workExperience.summary}</blockquote>
           </li>
         ))
@@ -73,5 +87,20 @@ const workExperiences = await Promise.all(
       <h4>Side Projects</h4>
       <a href={SIDE_PROJECTS.url} class="hover:text-fore">See all</a>
     </div>
+    <ul class="noDiscList">
+      {
+        projects.map((project) => (
+          <SimpleCard title={project.title} description={project.description}>
+            <ProjectSocialLinks
+              title={project.title}
+              blogUrl={undefined}
+              demoUrl={project.demoUrl}
+              repoUrl={project.repoUrl}
+              slot="card-footer"
+            />
+          </SimpleCard>
+        ))
+      }
+    </ul>
   </section>
 </Page>
