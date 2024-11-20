@@ -21,7 +21,7 @@ const { demoUrl, repoUrl, blogUrl, title } = Astro.props;
         <Image
           src={demoImage}
           slot="icon"
-          class="w-8"
+          class="w-8 invert"
           alt={`Demo link for project ${title}`}
         />
       </SocialLink>
@@ -33,7 +33,7 @@ const { demoUrl, repoUrl, blogUrl, title } = Astro.props;
         <Image
           src={githubImage}
           slot="icon"
-          class="w-8"
+          class="w-8 invert"
           alt={`Repo link for project ${title}`}
         />
       </SocialLink>
