@@ -29,8 +29,7 @@ const projects = defineCollection({
     description: z.string(),
     lastUpdated: z.coerce.date(),
     demoUrl: z.string().optional(),
-    repoUrl: z.string().optional(),
-    imageUrl: z.string().optional(),
+    repoSlug: z.string().optional(),
   }),
 });
 

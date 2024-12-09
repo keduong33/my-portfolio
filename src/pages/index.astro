@@ -3,10 +3,10 @@ import Image from "astro/components/Image.astro";
 import { getCollection } from "astro:content";
 import SimpleCard from "../components/SimpleCard.astro";
 import ProjectSocialLinks from "../components/SocialLink/ProjectSocialLinks.astro";
-import { BLOGS, HOME, SIDE_PROJECTS, WORK_EXPERIENCE } from "../consts";
+import { BLOGS, GITHUB, HOME, SIDE_PROJECTS, WORK_EXPERIENCE } from "../consts";
 import yayFrogImage from "../images/yayFrog.gif";
 import Page from "../layouts/Page.astro";
-import { dateRange } from "../lib/utils";
+import { dateRange, getSideProjects } from "../lib/utils";
 
 const numberOfStuffShown = 3;
 
@@ -23,9 +23,7 @@ const workExperiences = await Promise.all(
     .slice(0, numberOfStuffShown)
 );
 
-const projectsCollection = await getCollection("projects");
-const projects = projectsCollection
-  .map((project) => project.data)
+const projects = (await getSideProjects())
   .sort((a, b) => {
     return b.lastUpdated.valueOf() - a.lastUpdated.valueOf();
   })
@@ -99,7 +97,7 @@ const projects = projectsCollection
               title={project.title}
               blogUrl={undefined}
               demoUrl={project.demoUrl}
-              repoUrl={project.repoUrl}
+              repoUrl={`${GITHUB.repoUrl}/${project.repoSlug}`}
               slot="card-footer"
             />
           </SimpleCard>

@@ -31,3 +31,8 @@ export const SIDE_PROJECTS: PageInfo = {
   description: "Ke's fun side projects",
   url: "/side-projects",
 };
+
+export const GITHUB = {
+  repoUrl: "https://github.com/keduong33",
+  apiUrl: "https://api.github.com/repos/keduong33",
+};
