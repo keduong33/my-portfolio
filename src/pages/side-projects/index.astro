@@ -9,24 +9,27 @@ const projects = await getSideProjects();
 ---
 
 <Page page={SIDE_PROJECTS}>
-  <ul class="noDiscList">
-    {
-      projects.map((project) => {
-        return (
-          <SimpleCard title={project.title} description={project.description}>
-            <p slot="card-header" class="text-sm text-muted-foreground">
-              Last updated: {project.lastUpdated.toLocaleDateString()}
-            </p>
-            <ProjectSocialLinks
-              title={project.title}
-              blogUrl={undefined}
-              demoUrl={project.demoUrl}
-              repoUrl={project.repoSlug}
-              slot="card-footer"
-            />
-          </SimpleCard>
-        );
-      })
-    }
-  </ul>
+  <section>
+    <h2>{SIDE_PROJECTS.title}</h2>
+    <ul class="noDiscList">
+      {
+        projects.map((project) => {
+          return (
+            <SimpleCard title={project.title} description={project.description}>
+              <p slot="card-header" class="text-sm text-muted-foreground">
+                Last updated: {project.lastUpdated.toLocaleDateString()}
+              </p>
+              <ProjectSocialLinks
+                title={project.title}
+                blogUrl={undefined}
+                demoUrl={project.demoUrl}
+                repoUrl={project.repoSlug}
+                slot="card-footer"
+              />
+            </SimpleCard>
+          );
+        })
+      }
+    </ul>
+  </section>
 </Page>
