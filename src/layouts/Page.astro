@@ -34,7 +34,11 @@ const { page } = Astro.props;
   </head>
   <body>
     <Header />
-    <main class="container space-y-16 pb-9">
+    <main
+      class="container space-y-16 pb-9"
+      transition:name="main"
+      transition:animate="slide"
+    >
       <slot />
     </main>
     <Footer />
