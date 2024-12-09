@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import StarDivider from "../../components/StarDivider.astro";
 import { WORK_EXPERIENCE } from "../../consts";
 import Page from "../../layouts/Page.astro";
 import { dateRange, shortenUrl } from "../../lib/utils";
@@ -21,8 +22,8 @@ const workExperiences = await Promise.all(
     <h2>{WORK_EXPERIENCE.title}</h2>
     <ul class="noDiscList">
       {
-        workExperiences.map((workExperience) => (
-          <li>
+        workExperiences.map((workExperience, i) => (
+          <li class="items-center">
             <article>
               <div class="text-sm opacity-75">
                 {dateRange(workExperience.dateStart, workExperience.dateEnd)}
@@ -38,6 +39,7 @@ const workExperiences = await Promise.all(
               <div class="text-sm opacity-75">{workExperience.role}</div>
               <blockquote class="mt-2">{workExperience.summary}</blockquote>
               <workExperience.Content />
+              <StarDivider />
             </article>
           </li>
         ))
