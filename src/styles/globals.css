@@ -81,6 +81,10 @@
     @apply my-6 ml-6 list-disc [&>li]:mt-2;
   }
 
+  li {
+    @apply [&>ul]:mt-0 [&>ol]:mt-0;
+  }
+
   .noDiscList {
     @apply flex flex-col space-y-8 list-none ml-0;
   }
