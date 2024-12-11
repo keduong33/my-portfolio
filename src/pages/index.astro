@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 import ArrowCard from "../components/ArrowCard.astro";
 import SimpleCard from "../components/SimpleCard.astro";
 import ProjectSocialLinks from "../components/SocialLink/ProjectSocialLinks.astro";
-import { BLOGS, GITHUB, HOME, SIDE_PROJECTS, WORK_EXPERIENCE } from "../consts";
+import { BLOGS, GITHUB, HOME, PROJECTS, WORK_EXPERIENCE } from "../consts";
 import yayFrogImage from "../images/yayFrog.gif";
 import Page from "../layouts/Page.astro";
 import {
@@ -86,7 +86,7 @@ const projects = (await getSortedSideProjects())
   <section>
     <div class="flex flex-wrap items-center justify-between">
       <h4>Side Projects</h4>
-      <a href={SIDE_PROJECTS.url} class="hover:text-foreground">See all</a>
+      <a href={PROJECTS.url} class="hover:text-foreground">See all</a>
     </div>
     <ul class="noDiscList">
       {

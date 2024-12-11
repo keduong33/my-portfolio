@@ -38,10 +38,10 @@ export const WORK_EXPERIENCE: PageInfo = {
   url: "/work-experience",
 };
 
-export const SIDE_PROJECTS: PageInfo = {
-  title: "Side Projects",
-  description: "Ke's fun side projects",
-  url: "/side-projects",
+export const PROJECTS: PageInfo = {
+  title: "Projects",
+  description: "Ke's fun projects",
+  url: "/projects",
 };
 
 export const GITHUB = {

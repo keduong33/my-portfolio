@@ -1,16 +1,16 @@
 ---
 import SimpleCard from "../../components/SimpleCard.astro";
 import ProjectSocialLinks from "../../components/SocialLink/ProjectSocialLinks.astro";
-import { SIDE_PROJECTS } from "../../consts";
+import { PROJECTS } from "../../consts";
 import Page from "../../layouts/Page.astro";
 import { getSideProjects } from "../../lib/utils";
 
 const projects = await getSideProjects();
 ---
 
-<Page page={SIDE_PROJECTS}>
+<Page page={PROJECTS}>
   <section>
-    <h2>{SIDE_PROJECTS.title}</h2>
+    <h2>{PROJECTS.title}</h2>
     <ul class="noDiscList">
       {
         projects.map((project) => {
