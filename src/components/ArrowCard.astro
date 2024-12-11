@@ -13,6 +13,7 @@ const { entry } = Astro.props;
   class="bg-card border-2 rounded-sm p-4 no-underline hover:border-card-foreground flex items-center group"
 >
   <div class="flex flex-col flex-1">
+    <slot name="card-header" />
     <p class="font-semibold">
       {entry.data.title}
     </p>

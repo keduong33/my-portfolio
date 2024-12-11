@@ -1,8 +1,28 @@
 ---
+import ArrowCard from "../../components/ArrowCard.astro";
 import { BLOGS } from "../../consts";
 import Page from "../../layouts/Page.astro";
+import { getSortedBlogs } from "../../lib/utils";
+
+const blogs = await getSortedBlogs();
 ---
 
 <Page page={BLOGS}>
-  <a href="/blogs/just-blog-it/">Hello Blog</a>
+  <ul class="noDiscList">
+    {
+      blogs.map((blog) => (
+        <li>
+          <ArrowCard entry={blog}>
+            <p slot="card-header" class="text-sm text-muted-foreground">
+              {blog.data.date.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </p>
+          </ArrowCard>
+        </li>
+      ))
+    }
+  </ul>
 </Page>
