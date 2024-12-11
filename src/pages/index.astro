@@ -23,6 +23,19 @@ const workExperiences = await Promise.all(
     .slice(0, numberOfStuffShown)
 );
 
+const blogsCollection = await getCollection("blogs");
+const blogs = await Promise.all(
+  blogsCollection
+    .map(async (blog) => {
+      const { Content } = await blog.render();
+      return {
+        ...blog.data,
+        Content,
+      };
+    })
+    .slice(0, numberOfStuffShown)
+);
+
 const projects = (await getSideProjects())
   .sort((a, b) => {
     return b.lastUpdated.valueOf() - a.lastUpdated.valueOf();

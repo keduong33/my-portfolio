@@ -20,6 +20,16 @@ export const BLOGS: PageInfo = {
   url: "/blogs",
 };
 
+export const BLOG = (
+  title: string,
+  description: string,
+  slug: string
+): PageInfo => ({
+  title,
+  description,
+  url: `/blogs/${slug}`,
+});
+
 export const WORK_EXPERIENCE: PageInfo = {
   title: "Work Experience",
   description: "Ke's Work experience",
