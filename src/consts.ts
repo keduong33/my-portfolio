@@ -27,8 +27,10 @@ export const BLOG = (
 ): PageInfo => ({
   title,
   description,
-  url: `/blogs/${slug}`,
+  url: createBlogUrl(slug),
 });
+
+export const createBlogUrl = (slug: string) => `${BLOGS.url}/${slug}`;
 
 export const WORK_EXPERIENCE: PageInfo = {
   title: "Work Experience",

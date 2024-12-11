@@ -1,5 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
+import ArrowCard from "../components/ArrowCard.astro";
 import SimpleCard from "../components/SimpleCard.astro";
 import ProjectSocialLinks from "../components/SocialLink/ProjectSocialLinks.astro";
 import { BLOGS, GITHUB, HOME, SIDE_PROJECTS, WORK_EXPERIENCE } from "../consts";
@@ -54,6 +55,9 @@ const projects = (await getSortedSideProjects())
       <h4>Recent posts</h4>
       <a href={BLOGS.url} class="hover:animate-bounce">See all</a>
     </div>
+    <ul class="noDiscList">
+      {blogs.map((blog) => <ArrowCard entry={blog} />)}
+    </ul>
   </section>
 
   <section class="space-y-4">
