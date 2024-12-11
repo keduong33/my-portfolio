@@ -29,6 +29,13 @@ export function shortenUrl(url: string): string {
   return url.replace(/^https?\:\/\//i, "");
 }
 
+export async function getSortedSideProjects() {
+  const projects = await getCollection("projects");
+  return projects.toSorted(
+    (a, b) => b.data.lastUpdated.valueOf() - a.data.lastUpdated.valueOf()
+  );
+}
+
 export async function getSideProjects() {
   const projectsCollection = await getCollection("projects");
   const projects = projectsCollection.map((projects) => projects.data);
@@ -53,4 +60,18 @@ export async function getSideProjects() {
   // );
 
   return projects;
+}
+
+export async function getSortedWorkExperiences() {
+  const workExperiences = await getCollection("work-experience");
+  return workExperiences.toSorted(
+    (a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf()
+  );
+}
+
+export async function getSortedBlogs() {
+  const blogs = await getCollection("blogs");
+  return blogs.toSorted(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
 }

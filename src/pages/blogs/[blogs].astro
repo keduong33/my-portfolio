@@ -5,7 +5,6 @@ import Page from "../../layouts/Page.astro";
 
 export async function getStaticPaths() {
   const blogs = await getCollection("blogs");
-  console.log("blogs");
 
   return blogs.map((blog) => ({
     params: { blogs: blog.slug },
