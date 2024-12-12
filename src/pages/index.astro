@@ -1,0 +1,107 @@
+---
+import Image from "astro/components/Image.astro";
+import ArrowCard from "../components/ArrowCard.astro";
+import SimpleCard from "../components/SimpleCard.astro";
+import ProjectSocialLinks from "../components/SocialLink/ProjectSocialLinks.astro";
+import { BLOGS, GITHUB, HOME, PROJECTS, WORK_EXPERIENCE } from "../consts";
+import yayFrogImage from "../images/yayFrog.gif";
+import Page from "../layouts/Page.astro";
+import {
+  dateRange,
+  getSortedBlogs,
+  getSortedSideProjects,
+  getSortedWorkExperiences,
+} from "../lib/utils";
+
+const amount = 3;
+
+const workExperiences = (await getSortedWorkExperiences())
+  .slice(0, amount)
+  .map((workExperience) => workExperience.data);
+
+const blogs = (await getSortedBlogs()).slice(0, amount);
+
+const projects = (await getSortedSideProjects())
+  .slice(0, amount)
+  .map((project) => project.data);
+---
+
+<Page page={HOME}>
+  <section>
+    <h3>
+      Hi wanderers! <Image
+        loading="eager"
+        class="w-8 h-8 inline-block align-sub"
+        alt="a green frog with big eyes and a smile"
+        title="yay frog random"
+        src={yayFrogImage}
+      />
+    </h3>
+    <p>
+      I'm <em class="large">Ke</em> (<em class="large">David</em>), a Canvanaut.
+    </p>
+    <p>
+      I like learning new things and doing random projects since it's just fun
+      fun.
+    </p>
+    <p>
+      I also enjoy a few hobbies, like playing futsal, reading, photography,
+      skating, and more.
+    </p>
+  </section>
+
+  <section>
+    <div class="flex flex-wrap items-center justify-between">
+      <h4>Recent posts</h4>
+      <a href={BLOGS.url} class="hover:animate-bounce">See all</a>
+    </div>
+    <ul class="noDiscList">
+      {blogs.map((blog) => <ArrowCard entry={blog} />)}
+    </ul>
+  </section>
+
+  <section class="space-y-4">
+    <div class="flex flex-wrap items-center justify-between">
+      <h4>Work experiences</h4>
+      <a href={WORK_EXPERIENCE.url} class="hover:animate-bounce">See all</a>
+    </div>
+    <ul class="noDiscList">
+      {
+        workExperiences.map((workExperience) => (
+          <li>
+            <p class="text-sm opacity-75">
+              {dateRange(workExperience.dateStart, workExperience.dateEnd)}
+            </p>
+            <p class="font-semibold text-foreground">
+              {workExperience.company}
+            </p>
+            <p class="text-sm opacity-75">{workExperience.role}</p>
+            <blockquote class="mt-2">{workExperience.summary}</blockquote>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <div class="flex flex-wrap items-center justify-between">
+      <h4>Side Projects</h4>
+      <a href={PROJECTS.url} class="hover:text-foreground">See all</a>
+    </div>
+    <ul class="noDiscList">
+      {
+        projects.map((project) => (
+          <SimpleCard title={project.title} description={project.description}>
+            <ProjectSocialLinks
+              title={project.title}
+              blogUrl={undefined}
+              demoUrl={project.demoUrl}
+              repoUrl={`${GITHUB.repoUrl}/${project.repoSlug}`}
+              slot="card-footer"
+            />
+          </SimpleCard>
+        ))
+      }
+    </ul>
+  </section>
+</Page>

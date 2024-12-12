@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 8% 95%;
+  --foreground: 250 5% 5%;
+  --card: 250 8% 90%;
+  --card-foreground: 250 5% 10%;
+  --popover: 250 8% 95%;
+  --popover-foreground: 250 95% 5%;
+  --primary: 250 54% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 250 10% 70%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 212 10% 85%;
+  --muted-foreground: 250 5% 35%;
+  --accent: 212 10% 80%;
+  --accent-foreground: 250 5% 10%;
+  --destructive: 0 50% 30%;
+  --destructive-foreground: 250 5% 90%;
+  --border: 250 20% 50%;
+  --input: 250 20% 18%;
+  --ring: 250 54% 46%;
+  --radius: 0.75rem;
+}
+.dark {
+  --background: 250 10% 5%;
+  --foreground: 250 5% 90%;
+  --card: 250 8% 5%;
+  --card-foreground: 250 5% 90%;
+  --popover: 250 10% 5%;
+  --popover-foreground: 250 5% 90%;
+  --primary: 250 54% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 250 10% 10%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 212 10% 15%;
+  --muted-foreground: 250 5% 60%;
+  --accent: 212 10% 15%;
+  --accent-foreground: 250 5% 90%;
+  --destructive: 0 50% 30%;
+  --destructive-foreground: 250 5% 90%;
+  --border: 250 20% 18%;
+  --input: 250 20% 18%;
+  --ring: 250 54% 46%;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border font-mono;
+  }
+
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7 text-foreground;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+
+  ul,
+  ol {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  li {
+    @apply [&>ul]:mt-0 [&>ol]:mt-0;
+  }
+
+  .noDiscList {
+    @apply flex flex-col space-y-8 list-none ml-0;
+  }
+
+  .muted {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .large {
+    @apply text-lg font-semibold;
+  }
+
+  .lead {
+    @apply text-xl text-muted-foreground;
+  }
+
+  body {
+    @apply bg-background text-foreground pt-24;
+  }
+  a {
+    @apply underline text-muted-foreground hover:text-foreground;
+  }
+  code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+  .container {
+    @apply !max-w-screen-sm;
+  }
+}

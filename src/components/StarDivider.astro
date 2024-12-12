@@ -1,0 +1,28 @@
+---
+import Image from "astro/components/Image.astro";
+import yellowStar from "../images/yellowStar.svg";
+---
+
+<div class="flex w-full justify-center">
+  {
+      <Image
+        src={yellowStar}
+        slot="icon"
+        class="w-4 animate-pulse hover:animate-spin"
+        alt={`Yellow star divider`}
+      />
+      <Image
+        src={yellowStar}
+        slot="icon"
+        class="w-4 animate-pulse delay-200 hover:animate-spin"
+        alt={`Yellow star divider`}
+      />
+      <Image
+        src={yellowStar}
+        slot="icon"
+        class="w-4 animate-pulse delay-500 hover:animate-spin"
+        alt={`Yellow star divider`}
+      />
+    
+  }
+</div>

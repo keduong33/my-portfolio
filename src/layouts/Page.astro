@@ -1,0 +1,46 @@
+---
+import "@/styles/globals.css";
+import ClientRouter from "astro/components/ClientRouter.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import type { PageInfo } from "../consts";
+
+interface Props {
+  page: PageInfo;
+}
+
+const { page } = Astro.props;
+
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="en" class="dark">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{page.title}</title>
+    <meta name="title" content={page.title} />
+    <meta name="description" content={page.description} />
+
+    <!-- Canonical URL -->
+    <!-- <link rel="canonical" href={canonicalURL} /> -->
+
+    <ClientRouter />
+  </head>
+  <body>
+    <Header />
+    <main
+      class="container space-y-16 pb-9"
+      transition:name="main"
+      transition:animate="slide"
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

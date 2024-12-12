@@ -1,0 +1,18 @@
+---
+import { BLOGS, PROJECTS, WORK_EXPERIENCE } from "../consts";
+---
+
+<header
+  class="fixed top-0 left-0 right-0 flex py-5 bg-secondary/75 backdrop-blur-sm w-[100vw] z-10"
+>
+  <nav class="container flex justify-between px-5 items-center">
+    <a href="/" class="no-underline text-secondary-foreground">
+      <h3>Ke Duong</h3>
+    </a>
+    <span>
+      <a href={BLOGS.url} class="text-secondary-foreground">blogs</a>
+      <a href={WORK_EXPERIENCE.url} class="text-secondary-foreground">work</a>
+      <a href={PROJECTS.url} class="text-secondary-foreground">projects</a>
+    </span>
+  </nav>
+</header>
